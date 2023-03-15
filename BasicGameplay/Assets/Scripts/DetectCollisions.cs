@@ -20,13 +20,14 @@ public class DetectCollisions : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("GameOver");
+            gameManager.Addlives(-1);
             Destroy(gameObject);
         }
         else
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            gameManager.AddScore(1);
 
         }
         
